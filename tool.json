@@ -1,0 +1,206 @@
+{
+ "product": "estimate-drafter",
+ "name": "Estimate Drafter",
+ "site": "https://estimate-drafter-mn.vercel.app",
+ "price_usd": 5,
+ "accent": "#8a4b1f",
+ "stripe_pk": "pk_live_51TUvvcBzD4mN8eOD28H6oQkFwFHwF1SLtWxN1vHRmnSxntWFefgd33mEIVmjv8ekxWgkZft3OpPlzmVXMIeHPBwj003998hjTf",
+ "meta": "Paste your price list and the customer's request. Get the itemized estimate, the questions to ask, and the proposal ready to send. Every price is yours.",
+ "employer_count": 16,
+ "duty_quote": "Prepare quotes, proposals, and sales presentations",
+ "source_line": "From a Twin Cities job posting, October 2026.",
+ "turn_html": "That line describes a step, not a person. <b>Here is the step, done</b> on two real-looking requests and one shop's price list: every line tied to the customer's own words, every price from the list, and the questions to ask before you send it.",
+ "input_label": "Price list + requests (example, edit or paste yours)",
+ "output_label": "Estimates",
+ "run_label": "Draft the estimate",
+ "item_word": "requests",
+ "item_word_singular": "request",
+ "free_items": 1,
+ "paid_extra": "up to 10 a run, each with the proposal written and ready to send",
+ "pay_line": "Every request you paste, up to 10 a run, as often as you like, each with the customer-ready proposal and a spreadsheet of the lines. Your price list stays yours: the tool never makes up a price.",
+ "example_input": "PRICE LIST:\nTree removal, under 30 ft | each | 650\nTree removal, 30 to 60 ft | each | 1250\nStump grinding | each | 185\nCrown thinning / pruning | each | 340\nBrush haul-away | load | 175\nCrane day | day | 2400\nWood chip mulch, delivered | cubic yard | 48\nTAX: 8.375%\n---\nFrom: Pat Lindgren\nRe: quote for backyard trees, 4120 Bryant Ave S, Minneapolis\n\nHi, we have two dead ash trees in the back yard, the bigger one is maybe 45 feet and leans toward the garage, the other is about 20 ft. We want both down and the stumps ground. Also the big silver maple out front needs a trim, branches are over the roof. Can you haul everything away? It's probably two truck loads. We'd also like about 6 yards of mulch spread where the ashes were.\n---\nWalk-through notes, Emerson Ct townhomes (HOA, contact R. Ahmed)\nThree spruces along the north fence, all under 25 ft, removal + grind stumps. One oak by unit 8 overhanging the roof, prune. Access is tight between buildings, no bucket truck.\n",
+ "example_output": {
+  "estimates": [
+   {
+    "n": 1,
+    "customer": "Pat Lindgren",
+    "site": "4120 Bryant Ave S, Minneapolis",
+    "lines": [
+     {
+      "item": "Tree removal, 30 to 60 ft",
+      "basis": "two dead ash trees in the back yard, the bigger one is maybe 45 feet and leans toward the garage",
+      "qty_expr": "1",
+      "qty": 1,
+      "unit": "each",
+      "unit_price": 1250,
+      "total": 1250,
+      "flag": ""
+     },
+     {
+      "item": "Tree removal, under 30 ft",
+      "basis": "the other is about 20 ft. We want both down",
+      "qty_expr": "1",
+      "qty": 1,
+      "unit": "each",
+      "unit_price": 650,
+      "total": 650,
+      "flag": ""
+     },
+     {
+      "item": "Stump grinding",
+      "basis": "We want both down and the stumps ground",
+      "qty_expr": "2",
+      "qty": 2,
+      "unit": "each",
+      "unit_price": 185,
+      "total": 370,
+      "flag": ""
+     },
+     {
+      "item": "Crown thinning / pruning",
+      "basis": "the big silver maple out front needs a trim, branches are over the roof",
+      "qty_expr": "1",
+      "qty": 1,
+      "unit": "each",
+      "unit_price": 340,
+      "total": 340,
+      "flag": ""
+     },
+     {
+      "item": "Brush haul-away",
+      "basis": "Can you haul everything away? It's probably two truck loads.",
+      "qty_expr": "2",
+      "qty": 2,
+      "unit": "load",
+      "unit_price": 175,
+      "total": 350,
+      "flag": ""
+     },
+     {
+      "item": "Wood chip mulch, delivered",
+      "basis": "We'd also like about 6 yards of mulch",
+      "qty_expr": "6",
+      "qty": 6,
+      "unit": "cubic yard",
+      "unit_price": 48,
+      "total": 288,
+      "flag": ""
+     },
+     {
+      "item": "UNPRICED: spreading mulch",
+      "basis": "6 yards of mulch spread where the ashes were",
+      "qty_expr": "6",
+      "qty": 6,
+      "unit": "",
+      "unit_price": null,
+      "total": null,
+      "flag": "Not on your price list: add a price"
+     }
+    ],
+    "gaps": [
+     "Is there a gate or open path into the back yard, and how wide is it, so we can bring in equipment and the stump grinder?",
+     "The 45 ft ash leans toward the garage: is there room in the yard or alley to set up a crane if we decide one is needed after seeing it?",
+     "Are there power, phone or cable lines near the two ash trees or the silver maple?",
+     "For the silver maple, do you only want branches cleared off the roof, or a full crown thinning?",
+     "Do you want the ash trunks hauled away too, or would you like any wood left cut as firewood?",
+     "Should the mulch be spread only over the two stump areas, or over a larger bed?"
+    ],
+    "assumptions": [
+     "Tree heights are as you described (about 45 ft and about 20 ft); price may change if they are much taller.",
+     "The large ash can be taken down in sections by climbing without a crane; if a crane is needed, a crane day will be added.",
+     "Two truck loads covers all brush and wood; extra loads would be added at the load rate.",
+     "Ash wood will be disposed of following local emerald ash borer rules.",
+     "Stumps ground to below grade; grindings left in the holes unless you ask otherwise."
+    ],
+    "exclusions": [
+     "Repair of damage to lawn from equipment access beyond normal cleanup.",
+     "Removing roots beyond the stump grinding area.",
+     "Any work on the garage or roof.",
+     "Permits, if the city requires one."
+    ],
+    "letter": "Hi Pat,\n\nThank you for asking us to look at your trees at 4120 Bryant Ave S. Here is our proposal: we will take down both dead ash trees in the back yard (the leaning one near the garage and the smaller one), grind both stumps, trim the silver maple out front to clear the roof, haul the debris away, and deliver mulch for the areas where the ashes stood.\n\n\n  Tree removal, 30 to 60 ft: 1 each at $1,250.00 = $1,250.00\n  Tree removal, under 30 ft: 1 each at $650.00 = $650.00\n  Stump grinding: 2 each at $185.00 = $370.00\n  Crown thinning / pruning: 1 each at $340.00 = $340.00\n  Brush haul-away: 2 load at $175.00 = $350.00\n  Wood chip mulch, delivered: 6 cubic yard at $48.00 = $288.00\n\n\nTotal: $3,520.02 (including 8.375% tax)\n\nMulch spreading is not on our standard list yet, so we will confirm that price separately.\n\nA few questions before we finalize:\n- How wide is the access into the back yard for our equipment and stump grinder?\n- The big ash leans toward the garage. We plan to climb and take it down in pieces, but if it turns out a crane is safer, is there room to set one up? A crane day would be an added cost.\n- Are there any power or cable lines near the trees?\n- For the maple, do you want just the roof cleared or a full thinning?\n- Should we haul all the wood, or leave some as firewood?\n- Where exactly do you want the mulch spread?\n\nThis assumes the tree heights are close to what you described and that two loads covers the haul-away. It does not include lawn repair beyond normal cleanup, root removal, or permits if the city requires one.\n\nWe look forward to hearing from you.",
+    "subtotal": 3248,
+    "tax_rate": 8.375,
+    "tax": 272.02,
+    "total": 3520.02
+   },
+   {
+    "n": 2,
+    "customer": "Emerson Ct townhomes (HOA, contact R. Ahmed)",
+    "site": "Emerson Ct townhomes",
+    "lines": [
+     {
+      "item": "Tree removal, under 30 ft",
+      "basis": "Three spruces along the north fence, all under 25 ft, removal",
+      "qty_expr": "3",
+      "qty": 3,
+      "unit": "each",
+      "unit_price": 650,
+      "total": 1950,
+      "flag": ""
+     },
+     {
+      "item": "Stump grinding",
+      "basis": "Three spruces ... removal + grind stumps",
+      "qty_expr": "3",
+      "qty": 3,
+      "unit": "each",
+      "unit_price": 185,
+      "total": 555,
+      "flag": ""
+     },
+     {
+      "item": "Crown thinning / pruning",
+      "basis": "One oak by unit 8 overhanging the roof, prune",
+      "qty_expr": "1",
+      "qty": 1,
+      "unit": "each",
+      "unit_price": 340,
+      "total": 340,
+      "flag": ""
+     },
+     {
+      "item": "Brush haul-away",
+      "basis": "Not stated; removal of three spruces and oak pruning will produce debris",
+      "qty_expr": "0",
+      "qty": 0,
+      "unit": "load",
+      "unit_price": 175,
+      "total": 0,
+      "flag": "Quantity needs an answer from the customer"
+     }
+    ],
+    "gaps": [
+     "Does the HOA want all brush, logs and wood chips hauled away, or can any be left on site?",
+     "What is the street address for the job and who signs off for the HOA?",
+     "How wide is the narrowest gap between buildings, so we know if a stump grinder can get through?",
+     "Is there anywhere a crane could set up if the oak can't be pruned safely by climbing?",
+     "For the oak by unit 8, is the goal only to clear the roof, or a full crown thinning?",
+     "Are there utility lines, irrigation or buried services near the spruces or along the north fence?",
+     "Will residents need notice or cars moved on the work day?"
+    ],
+    "assumptions": [
+     "All three spruces are under 25 ft as noted.",
+     "No bucket truck; trees will be climbed and debris carried out by hand through the tight access.",
+     "Stump grinder fits between the buildings; if not, stumps may need another method at added cost.",
+     "Stumps ground below grade with grindings left in place unless asked otherwise.",
+     "No crane needed."
+    ],
+    "exclusions": [
+     "Repair of lawn, landscaping or the fence beyond normal cleanup.",
+     "Root removal beyond the stump grinding area.",
+     "Replacement planting or mulch.",
+     "Permits, if required."
+    ],
+    "letter": "Hello R. Ahmed,\n\nThank you for walking the Emerson Ct property with us. Here is our proposal: remove the three spruces along the north fence and grind their stumps, and prune the oak by unit 8 so it is off the roof. Because access between the buildings is tight and no bucket truck can get in, we will climb the trees and carry material out by hand.\n\n\n  Tree removal, under 30 ft: 3 each at $650.00 = $1,950.00\n  Stump grinding: 3 each at $185.00 = $555.00\n  Crown thinning / pruning: 1 each at $340.00 = $340.00\n\n\nTotal: $3,083.27 (including 8.375% tax)\n\nA few questions before we finalize:\n- Would the HOA like all debris hauled away, or can some wood or chips stay on site? Haul-away will be added once we know how many loads.\n- What is the street address, and who signs off for the HOA?\n- How wide is the narrowest passage between buildings? We need to confirm the stump grinder fits.\n- For the oak, do you want just the roof cleared or a full thinning?\n- Are there any utility lines, irrigation or buried services near the work areas?\n- Will residents need notice or cars moved?\n\nThis assumes the spruces are under 25 ft and that no crane is needed. It does not include lawn, landscaping or fence repair beyond normal cleanup, root removal, replanting, or permits if required.\n\nWe look forward to working with the association.",
+    "subtotal": 2845,
+    "tax_rate": 8.375,
+    "tax": 238.27,
+    "total": 3083.27
+   }
+  ],
+  "example": true
+ },
+ "foot_html": "The price list and requests on the left are made up. Start with <code>PRICE LIST:</code> (one item per line: item | unit | price), an optional <code>TAX: 8.375%</code> line, then each request after a line of three dashes. Quantities come from numbers in the request; totals are computed, not guessed.",
+ "css": ".est{border-top:1px solid var(--rule);padding:12px 0}.est:first-child{border-top:0;padding-top:0}.who{margin-bottom:6px}.lines{width:100%;border-collapse:collapse;font-size:14px}.lines th{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:left;border-bottom:1px solid var(--rule);padding:4px 4px}.lines td{padding:6px 4px;border-bottom:1px solid var(--rule);vertical-align:top}.r{text-align:right;white-space:nowrap}.basis{font-size:12px;color:var(--muted)}.flag{font-size:12px;color:#a3361f}tfoot td{border:0;padding:3px 4px}.tot td{font-weight:700;font-size:16px}.gaps{font-size:14px;margin-top:8px}.gaps ul,details ul{margin:4px 0;padding-left:18px}details{font-size:14px;margin-top:6px}summary{cursor:pointer;color:var(--muted);min-height:36px;display:flex;align-items:center}.draft{white-space:pre-wrap;font:13px/1.45 var(--mono);background:var(--bg);border-radius:8px;padding:10px;margin:6px 0}.qp{display:none;font-size:13px}@media (max-width:600px){.nq{display:none}.qp{display:block}.lines td.cs{text-align:left}}"
+}
